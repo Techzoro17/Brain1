@@ -1,0 +1,48 @@
+const output = document.getElementById("output");
+
+var Task =[
+
+]
+
+function show() {
+    output.innerHTML =""
+    Task.forEach(element => {
+        const div = document.createElement('div');
+        const data =document.createElement('h3');
+        data.textContent =element.task; 
+        data.classList.add("data_h2")
+        div.appendChild(data)
+
+        const del = document.createElement('button');
+        del.textContent = 'delete';
+        del.classList.add("btn")
+        del.addEventListener("click", ()=>taskRemove(element.id))
+        div.appendChild(del)
+
+        div.classList.add('data')
+        output.appendChild(div);
+        
+        
+    });
+    
+}
+function addTask(event) {
+    event.preventDefault();
+    const ttask = document.getElementById('Task').value;
+    if(ttask.trim()!==""){
+    const newtask ={
+        id:Date.now(),
+        task:ttask
+    }
+    Task.push(newtask);
+    
+    
+    document.getElementById("Task").value ="";
+    show()
+}
+}
+
+function taskRemove( id) {
+    Task =Task.filter(element=>element.id!=id)
+    show();
+}
