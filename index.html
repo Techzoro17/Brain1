@@ -32,6 +32,12 @@
             color: white;
              
         }
+        .btn:hover{
+            background-color: rgb(108, 4, 4);
+        }
+        .strikethrough {
+            text-decoration: line-through;
+        }
     </style>
 </head>
 <body>
@@ -42,7 +48,7 @@
                 <input type="text" placeholder="Enter the Task" class=" px-2 placeholder:px-2" id="Task">
                 <button class="bg-blue-700 text-white  w-20 text-xl font-semibold hover:bg-green-700  " onclick="addTask(event)">Add</button>
             </form>
-            <div class="bg-white w-full  mt-4 rounded-xl py-4 px-2" id="output">
+            <div class="bg-white w-full  mt-4 rounded-xl py-4 px-2 overflow-auto" id="output">
                 <h2>Add Task</h2>
                 
 
